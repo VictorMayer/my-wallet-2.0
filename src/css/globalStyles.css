@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    width:100vw;
+    height:100vh;
+    background-color: #8C11BE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
