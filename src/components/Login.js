@@ -14,7 +14,7 @@ export default function Login() {
     function logUser(e) {
         e.preventDefault();
         setRequesting(true);
-        const { email, password };
+        const { email, password } = data;
         const body = {email, password};
         axios.post("http://localhost:4000/sign-in", body).then(answer => {
             setRequesting(false);
@@ -22,17 +22,17 @@ export default function Login() {
             history.push("/");
         }).catch(err => {
             console.log(err);
-            setRequesting(False);
+            setRequesting(false);
         })
     }
 
     return(
         <LoginStyles>
-        <p className="logo" >MyWallet</p>
-        <form>
+        <p className="logo">MyWallet</p>
+        <form onSubmit={logUser}>
             <input required value={data.email} onChange={(e) => setData({...data, email: e.target.value})} placeholder="Email"></input>
             <input required value={data.password} onChange={(e) => setData({...data, password: e.target.value})} placeholder="Senha"></input>
-            <button>{ requesting ? "Entrando..." : "Entrar" }</button>
+            <button type="submit">{ requesting ? "Entrando..." : "Entrar" }</button>
         </form>
         <p onClick={() => history.push("/sign-up")} className="toggle-sign" >Primeira vez? Cadastr-se!</p>
         </LoginStyles>
