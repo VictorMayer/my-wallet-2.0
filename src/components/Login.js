@@ -18,6 +18,7 @@ export default function Login() {
         const { email, password } = data;
         const body = {email, password};
         axios.post("http://localhost:4000/sign-in", body).then(answer => {
+            console.log(answer.data);
             setRequesting(false);
             setUser(answer.data);
             history.push("/");
@@ -46,22 +47,21 @@ export default function Login() {
 
 const LoginStyles = styled.div`
     width:100%;
-    height: 33vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 221px;
-    padding: 0px 10px;
+    padding-bottom: 120px;
     .logo{
         font-size: 32px;
         font-family: 'Saira Stencil One', cursive; 
         color:#fff;
         cursor: default;
-        margin-bottom: 10px;
+        margin-bottom: 40px;
         &:hover{
             font-size: 36px;
-            margin-bottom: 6px;
+            margin-bottom: 36px;
         }
     }
     
@@ -103,14 +103,14 @@ const LoginStyles = styled.div`
         }
     }
     .toggle-sign{
-        margin-top:1px;
+        margin-top:36px;
         font-size: 15px;
         font-family: 'Raleway', sans-serif;
         font-weight: 700;
         color:#fff;
         cursor: pointer;
         &:hover{
-            margin-top:0px;
+            margin-top:35px;
             font-size: 16px;
         }
     }

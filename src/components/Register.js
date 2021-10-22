@@ -45,22 +45,21 @@ export default function Register() {
 
 const RegisterStyles = styled.div`
     width:100%;
-    height: 48vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 70px;
-    padding: 0px 10px;
+    padding-bottom: 40px;
     .logo{
         font-size: 32px;
         font-family: 'Saira Stencil One', cursive; 
         color:#fff;
         cursor: default;
-        margin-bottom: 4px;
+        margin-bottom: 40px;
         &:hover{
             font-size: 36px;
-            margin-bottom: 0px;
+            margin-bottom: 36px;
         }
     }
     
@@ -102,14 +101,14 @@ const RegisterStyles = styled.div`
         }
     }
     .toggle-sign{
-        margin-top:1px;
+        margin-top:36px;
         font-size: 15px;
         font-family: 'Raleway', sans-serif;
         font-weight: 700;
         color:#fff;
         cursor: pointer;
         &:hover{
-            margin-top:0px;
+            margin-top:35px;
             font-size: 16px;
         }
     }
