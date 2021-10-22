@@ -2,6 +2,7 @@ import UserContext from "../contexts/UserContext";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
 import styled from "styled-components";
+import Loader from "./Loader.js";
 import axios from "axios";
 
 export default function Login() {
@@ -28,13 +29,17 @@ export default function Login() {
 
     return(
         <LoginStyles>
-        <p className="logo">MyWallet</p>
-        <form onSubmit={logUser}>
-            <input required value={data.email} onChange={(e) => setData({...data, email: e.target.value})} placeholder="Email"></input>
-            <input required value={data.password} onChange={(e) => setData({...data, password: e.target.value})} placeholder="Senha"></input>
-            <button type="submit">{ requesting ? "Entrando..." : "Entrar" }</button>
-        </form>
-        <p onClick={() => history.push("/sign-up")} className="toggle-sign" >Primeira vez? Cadastr-se!</p>
+            {requesting ? 
+                <Loader/> :
+            <>
+                <p className="logo">MyWallet</p>
+                <form onSubmit={logUser}>
+                    <input required type="email" value={data.email} onChange={(e) => setData({...data, email: e.target.value})} placeholder="Email"></input>
+                    <input required type="password" value={data.password} onChange={(e) => setData({...data, password: e.target.value})} placeholder="Senha"></input>
+                    <button type="submit">Entrar</button>
+                </form>
+                <p onClick={() => history.push("/sign-up")} className="toggle-sign">Primeira vez? Cadastr-se!</p>
+            </> }
         </LoginStyles>
     )
 }
