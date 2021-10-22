@@ -38,7 +38,7 @@ export default function Register() {
             <input disabled={requesting} value={data.confirmPassword} onChange={(e) => setData({...data, confirmPassword: e.target.value})} required type="password" placeholder="Confirme a senha"></input>
             <button disabled={requesting} type="submit" >{requesting ? "Cadastrando..." : "Cadastrar"}</button>
         </form>
-        <p onClick={() => {history.push("/sign-in")}} className="toggle-sign">Já tem uma conta? Entre agora!</p>
+        <p onClick={() => history.push("/sign-in")} className="toggle-sign">Já tem uma conta? Entre agora!</p>
         </RegisterStyles>
     )
 }
