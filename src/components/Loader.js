@@ -15,10 +15,14 @@ const PreloaderStyle = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height:60vh;
+    height:90vh;
+    width:100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
     p{
-        margin-right:5px;
-        margin-top:25px;
+        margin-left:10px;
+        margin-top:10px;
         color:white;
         font-size: 20px;
         position: absolute;

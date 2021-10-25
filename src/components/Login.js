@@ -9,7 +9,7 @@ export default function Login() {
 
     const [data, setData] = useState({email:"", password:""});
     const [requesting, setRequesting] = useState(false);
-    const { setUser } = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
     const history = useHistory();
 
     function logUser(e) {
@@ -18,13 +18,13 @@ export default function Login() {
         const { email, password } = data;
         const body = {email, password};
         axios.post("http://localhost:4000/sign-in", body).then(answer => {
-            console.log(answer.data);
             setRequesting(false);
-            setUser(answer.data);
+            setUser({...user, token: answer.data});
             history.push("/");
         }).catch(err => {
-            console.log(err);
             setRequesting(false);
+            alert(err.response.data);
+            setData({...data, password:""});
         })
     }
 

@@ -4,7 +4,7 @@
 }
 
 body {
-    width:100vw;
+    margin: 0px 24px;
     height:100vh;
     background-color: #8C11BE;
     display: flex;
