@@ -19,8 +19,8 @@ export default function Home() {
         axios.get("http://localhost:4000/users", config).then((answer) => {
             console.log(answer.data)
             setPreloader(false);
-            setUser(answer.data?.user);
-            setData(answer.data?.transactions);
+            setUser(answer.data.user);
+            setData(answer.data.transactions);
           }).catch((answer) => {
             console.log(answer);
             if(answer.response?.status === 401) history.push("/sign-in");
